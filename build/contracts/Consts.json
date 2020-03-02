@@ -1,0 +1,613 @@
+{
+  "contractName": "Consts",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.8+commit.23d335f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{},\"notice\":\"Consts used in multi files\"}},\"settings\":{\"compilationTarget\":{\"/Users/mikovainio/WebstormProjects/bitfinance-protocol/contracts/lib/Consts.sol\":\"Consts\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/mikovainio/WebstormProjects/bitfinance-protocol/contracts/lib/Consts.sol\":{\"keccak256\":\"0x5af3b6a1d774d6a67a0764c00674e867a977babadd5b60e706f8ad9f932876d1\",\"urls\":[\"bzzr://1d398e820580da7c9a107f552c96e76b043d2de4dcc0e8babc0fbf4b16cabfb2\"]}},\"version\":1}",
+  "bytecode": "0x604c6023600b82828239805160001a607314601657fe5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea165627a7a72305820b98e7d7500d0009e28327a3bbf859138243dec0f22c60e6a2c1d09b95e2387ac0029",
+  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea165627a7a72305820b98e7d7500d0009e28327a3bbf859138243dec0f22c60e6a2c1d09b95e2387ac0029",
+  "sourceMap": "676:504:30:-;;132:2:-1;166:7;155:9;146:7;137:37;255:7;249:14;246:1;241:23;235:4;232:33;222:2;;269:9;222:2;293:9;290:1;283:20;323:4;314:7;306:22;347:7;338;331:24",
+  "deployedSourceMap": "676:504:30:-;;;;;;;;",
+  "source": "/*\n\n    Copyright 2019 The BitFinance Protocol\n\n    Licensed under the Apache License, Version 2.0 (the \"License\");\n    you may not use this file except in compliance with the License.\n    You may obtain a copy of the License at\n\n        http://www.apache.org/licenses/LICENSE-2.0\n\n    Unless required by applicable law or agreed to in writing, software\n    distributed under the License is distributed on an \"AS IS\" BASIS,\n    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n    See the License for the specific language governing permissions and\n    limitations under the License.\n\n*/\n\npragma solidity ^0.5.8;\n\n/**\n * Consts used in multi files\n */\nlibrary Consts {\n    function ETHEREUM_TOKEN_ADDRESS()\n        internal\n        pure\n        returns (address)\n    {\n        return 0x000000000000000000000000000000000000000E;\n    }\n\n    // The base discounted rate is 100% of the current rate, or no discount.\n    function DISCOUNT_RATE_BASE()\n        internal\n        pure\n        returns (uint256)\n    {\n        return 100;\n    }\n\n    function REBATE_RATE_BASE()\n        internal\n        pure\n        returns (uint256)\n    {\n        return 100;\n    }\n}",
+  "sourcePath": "/Users/mikovainio/WebstormProjects/bitfinance-protocol/contracts/lib/Consts.sol",
+  "ast": {
+    "absolutePath": "/Users/mikovainio/WebstormProjects/bitfinance-protocol/contracts/lib/Consts.sol",
+    "exportedSymbols": {
+      "Consts": [
+        7169
+      ]
+    },
+    "id": 7170,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 7144,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".8"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "613:23:30"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "library",
+        "documentation": "Consts used in multi files",
+        "fullyImplemented": true,
+        "id": 7169,
+        "linearizedBaseContracts": [
+          7169
+        ],
+        "name": "Consts",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 7151,
+              "nodeType": "Block",
+              "src": "791:66:30",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "hexValue": "307830303030303030303030303030303030303030303030303030303030303030303030303030303045",
+                    "id": 7149,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "number",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "808:42:30",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    },
+                    "value": "0x000000000000000000000000000000000000000E"
+                  },
+                  "functionReturnParameters": 7148,
+                  "id": 7150,
+                  "nodeType": "Return",
+                  "src": "801:49:30"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 7152,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "ETHEREUM_TOKEN_ADDRESS",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7145,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "728:2:30"
+            },
+            "returnParameters": {
+              "id": 7148,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7147,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7152,
+                  "src": "778:7:30",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 7146,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "778:7:30",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "777:9:30"
+            },
+            "scope": 7169,
+            "src": "697:160:30",
+            "stateMutability": "pure",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 7159,
+              "nodeType": "Block",
+              "src": "1030:27:30",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "hexValue": "313030",
+                    "id": 7157,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "number",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "1047:3:30",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_rational_100_by_1",
+                      "typeString": "int_const 100"
+                    },
+                    "value": "100"
+                  },
+                  "functionReturnParameters": 7156,
+                  "id": 7158,
+                  "nodeType": "Return",
+                  "src": "1040:10:30"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 7160,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "DISCOUNT_RATE_BASE",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7153,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "967:2:30"
+            },
+            "returnParameters": {
+              "id": 7156,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7155,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7160,
+                  "src": "1017:7:30",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7154,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1017:7:30",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1016:9:30"
+            },
+            "scope": 7169,
+            "src": "940:117:30",
+            "stateMutability": "pure",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 7167,
+              "nodeType": "Block",
+              "src": "1151:27:30",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "hexValue": "313030",
+                    "id": 7165,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "number",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "1168:3:30",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_rational_100_by_1",
+                      "typeString": "int_const 100"
+                    },
+                    "value": "100"
+                  },
+                  "functionReturnParameters": 7164,
+                  "id": 7166,
+                  "nodeType": "Return",
+                  "src": "1161:10:30"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 7168,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "REBATE_RATE_BASE",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7161,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1088:2:30"
+            },
+            "returnParameters": {
+              "id": 7164,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7163,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7168,
+                  "src": "1138:7:30",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7162,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1138:7:30",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1137:9:30"
+            },
+            "scope": 7169,
+            "src": "1063:115:30",
+            "stateMutability": "pure",
+            "superFunction": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 7170,
+        "src": "676:504:30"
+      }
+    ],
+    "src": "613:567:30"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/mikovainio/WebstormProjects/bitfinance-protocol/contracts/lib/Consts.sol",
+    "exportedSymbols": {
+      "Consts": [
+        7169
+      ]
+    },
+    "id": 7170,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 7144,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".8"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "613:23:30"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "library",
+        "documentation": "Consts used in multi files",
+        "fullyImplemented": true,
+        "id": 7169,
+        "linearizedBaseContracts": [
+          7169
+        ],
+        "name": "Consts",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 7151,
+              "nodeType": "Block",
+              "src": "791:66:30",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "hexValue": "307830303030303030303030303030303030303030303030303030303030303030303030303030303045",
+                    "id": 7149,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "number",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "808:42:30",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    },
+                    "value": "0x000000000000000000000000000000000000000E"
+                  },
+                  "functionReturnParameters": 7148,
+                  "id": 7150,
+                  "nodeType": "Return",
+                  "src": "801:49:30"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 7152,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "ETHEREUM_TOKEN_ADDRESS",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7145,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "728:2:30"
+            },
+            "returnParameters": {
+              "id": 7148,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7147,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7152,
+                  "src": "778:7:30",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 7146,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "778:7:30",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "777:9:30"
+            },
+            "scope": 7169,
+            "src": "697:160:30",
+            "stateMutability": "pure",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 7159,
+              "nodeType": "Block",
+              "src": "1030:27:30",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "hexValue": "313030",
+                    "id": 7157,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "number",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "1047:3:30",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_rational_100_by_1",
+                      "typeString": "int_const 100"
+                    },
+                    "value": "100"
+                  },
+                  "functionReturnParameters": 7156,
+                  "id": 7158,
+                  "nodeType": "Return",
+                  "src": "1040:10:30"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 7160,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "DISCOUNT_RATE_BASE",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7153,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "967:2:30"
+            },
+            "returnParameters": {
+              "id": 7156,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7155,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7160,
+                  "src": "1017:7:30",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7154,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1017:7:30",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1016:9:30"
+            },
+            "scope": 7169,
+            "src": "940:117:30",
+            "stateMutability": "pure",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 7167,
+              "nodeType": "Block",
+              "src": "1151:27:30",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "hexValue": "313030",
+                    "id": 7165,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "number",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "1168:3:30",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_rational_100_by_1",
+                      "typeString": "int_const 100"
+                    },
+                    "value": "100"
+                  },
+                  "functionReturnParameters": 7164,
+                  "id": 7166,
+                  "nodeType": "Return",
+                  "src": "1161:10:30"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 7168,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "REBATE_RATE_BASE",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7161,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1088:2:30"
+            },
+            "returnParameters": {
+              "id": 7164,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7163,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7168,
+                  "src": "1138:7:30",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7162,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1138:7:30",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1137:9:30"
+            },
+            "scope": 7169,
+            "src": "1063:115:30",
+            "stateMutability": "pure",
+            "superFunction": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 7170,
+        "src": "676:504:30"
+      }
+    ],
+    "src": "613:567:30"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.8+commit.23d335f2.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.11",
+  "updatedAt": "2020-03-02T16:59:53.332Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {},
+    "notice": "Consts used in multi files"
+  }
+}

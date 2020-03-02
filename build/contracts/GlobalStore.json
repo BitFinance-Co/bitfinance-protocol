@@ -1,0 +1,201 @@
+{
+  "contractName": "GlobalStore",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.8+commit.23d335f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{},\"notice\":\"Global state store\"}},\"settings\":{\"compilationTarget\":{\"/Users/mikovainio/WebstormProjects/bitfinance-protocol/contracts/GlobalStore.sol\":\"GlobalStore\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/mikovainio/WebstormProjects/bitfinance-protocol/contracts/GlobalStore.sol\":{\"keccak256\":\"0x87b95e0aacb9112c70921cc1df41c3100f15dfc7f56d8d7e0deae6d916ad6d90\",\"urls\":[\"bzzr://47e16601e400a45b545dbd54f7a651c947e66bf9c5a8206bdf1ab79bdc87b0fb\"]},\"/Users/mikovainio/WebstormProjects/bitfinance-protocol/contracts/interfaces/IInterestModel.sol\":{\"keccak256\":\"0xf1504f73b0d7d875ada7dc96dd74ba31ea34dd925914ce4560bed764d670394a\",\"urls\":[\"bzzr://a3500b7ef30f6da4086d09e65df5c67217a55cb22afde4b94c8a98efd901f843\"]},\"/Users/mikovainio/WebstormProjects/bitfinance-protocol/contracts/interfaces/ILendingPoolToken.sol\":{\"keccak256\":\"0x80755286e1aaeeec8448d7f50093687ec3991ead055f50f1b091d2625aec1430\",\"urls\":[\"bzzr://069e3a576a158cb8334d5949811ace097808fde0553dcc76aabe6bb7c017e38a\"]},\"/Users/mikovainio/WebstormProjects/bitfinance-protocol/contracts/interfaces/IPriceOracle.sol\":{\"keccak256\":\"0x28578d0ff79f9497c53fd791cab2c3ce773db02d5ab72f9193d89ec4f62f9015\",\"urls\":[\"bzzr://98121b360b860aeda3c26bfbf48aac17bf3daa404e67d97f850920359214f24b\"]},\"/Users/mikovainio/WebstormProjects/bitfinance-protocol/contracts/lib/Consts.sol\":{\"keccak256\":\"0x5af3b6a1d774d6a67a0764c00674e867a977babadd5b60e706f8ad9f932876d1\",\"urls\":[\"bzzr://1d398e820580da7c9a107f552c96e76b043d2de4dcc0e8babc0fbf4b16cabfb2\"]},\"/Users/mikovainio/WebstormProjects/bitfinance-protocol/contracts/lib/Decimal.sol\":{\"keccak256\":\"0xe00666dfd860efa4274d7c55161de35b8dfc5022b192deb85422c803a4b762e2\",\"urls\":[\"bzzr://9bb57021a21938344062054731d80787193b2452ae56530f5a28a2b3e982faaf\"]},\"/Users/mikovainio/WebstormProjects/bitfinance-protocol/contracts/lib/EIP712.sol\":{\"keccak256\":\"0x0e15641f7f61a85f6f96f98ef2b25e862778dc561f7845a679fd38266e21edfe\",\"urls\":[\"bzzr://7d89d60eca6a5514e73e6c4fb00dcde07fea8e1dbdb98bb9635549cee6fdde9c\"]},\"/Users/mikovainio/WebstormProjects/bitfinance-protocol/contracts/lib/SafeMath.sol\":{\"keccak256\":\"0x70c75c67729a507beddc658a4bac4990bbc4d009b3a6ac479c68699f30fbc9ca\",\"urls\":[\"bzzr://25677075bd77f9ac14c0aaaa20203d8e256602f4e487d76d92525731b9492a83\"]},\"/Users/mikovainio/WebstormProjects/bitfinance-protocol/contracts/lib/Signature.sol\":{\"keccak256\":\"0x6a60afaba16bffb6e85a9d75901c70921af4443997fa52b362c35cf6abd569f2\",\"urls\":[\"bzzr://7645712086f0150c6844f09e3a5d3d50537bdeb1cdd4024b6304707fd6c4347a\"]},\"/Users/mikovainio/WebstormProjects/bitfinance-protocol/contracts/lib/Store.sol\":{\"keccak256\":\"0x278a65d30c5dbfd4ac7d8eff046c78aa61c2f5dc8c8aa43a4a0b36f9d3f83b68\",\"urls\":[\"bzzr://36c798ef270a74112bb2779b083917883210b7de250d7602fa8816f01f64357d\"]},\"/Users/mikovainio/WebstormProjects/bitfinance-protocol/contracts/lib/Types.sol\":{\"keccak256\":\"0x000bbb9d61ca848064ba4a574c08b469fd170e932f7de7a5fed8040d5ea78b69\",\"urls\":[\"bzzr://701893d3731d04b6eba9b47f8ac83e9289e8ceb17cbb10af90caa47b241450ee\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50604380601d6000396000f3fe6080604052600080fdfea265627a7a72305820d70d4606d64b06600afe362bc5197d8bfff4845cc574e26edd9c2cdb9327c2c86c6578706572696d656e74616cf50037",
+  "deployedBytecode": "0x6080604052600080fdfea265627a7a72305820d70d4606d64b06600afe362bc5197d8bfff4845cc574e26edd9c2cdb9327c2c86c6578706572696d656e74616cf50037",
+  "sourceMap": "728:47:3:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;728:47:3;;;;;;;",
+  "deployedSourceMap": "728:47:3:-;;;;;",
+  "source": "/*\n\n    Copyright 2019 The BitFinance Protocol\n\n    Licensed under the Apache License, Version 2.0 (the \"License\");\n    you may not use this file except in compliance with the License.\n    You may obtain a copy of the License at\n\n        http://www.apache.org/licenses/LICENSE-2.0\n\n    Unless required by applicable law or agreed to in writing, software\n    distributed under the License is distributed on an \"AS IS\" BASIS,\n    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n    See the License for the specific language governing permissions and\n    limitations under the License.\n\n*/\n\npragma solidity 0.5.8;\npragma experimental ABIEncoderV2;\n\nimport \"./lib/Store.sol\";\n\n/**\n * Global state store\n */\ncontract GlobalStore {\n    Store.State state;\n}",
+  "sourcePath": "/Users/mikovainio/WebstormProjects/bitfinance-protocol/contracts/GlobalStore.sol",
+  "ast": {
+    "absolutePath": "/Users/mikovainio/WebstormProjects/bitfinance-protocol/contracts/GlobalStore.sol",
+    "exportedSymbols": {
+      "GlobalStore": [
+        877
+      ]
+    },
+    "id": 878,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 872,
+        "literals": [
+          "solidity",
+          "0.5",
+          ".8"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "613:22:3"
+      },
+      {
+        "id": 873,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "636:33:3"
+      },
+      {
+        "absolutePath": "/Users/mikovainio/WebstormProjects/bitfinance-protocol/contracts/lib/Store.sol",
+        "file": "./lib/Store.sol",
+        "id": 874,
+        "nodeType": "ImportDirective",
+        "scope": 878,
+        "sourceUnit": 9166,
+        "src": "671:25:3",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": "Global state store",
+        "fullyImplemented": true,
+        "id": 877,
+        "linearizedBaseContracts": [
+          877
+        ],
+        "name": "GlobalStore",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 876,
+            "name": "state",
+            "nodeType": "VariableDeclaration",
+            "scope": 877,
+            "src": "755:17:3",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_struct$_State_$9164_storage",
+              "typeString": "struct Store.State"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 875,
+              "name": "Store.State",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 9164,
+              "src": "755:11:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_struct$_State_$9164_storage_ptr",
+                "typeString": "struct Store.State"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 878,
+        "src": "728:47:3"
+      }
+    ],
+    "src": "613:162:3"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/mikovainio/WebstormProjects/bitfinance-protocol/contracts/GlobalStore.sol",
+    "exportedSymbols": {
+      "GlobalStore": [
+        877
+      ]
+    },
+    "id": 878,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 872,
+        "literals": [
+          "solidity",
+          "0.5",
+          ".8"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "613:22:3"
+      },
+      {
+        "id": 873,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "636:33:3"
+      },
+      {
+        "absolutePath": "/Users/mikovainio/WebstormProjects/bitfinance-protocol/contracts/lib/Store.sol",
+        "file": "./lib/Store.sol",
+        "id": 874,
+        "nodeType": "ImportDirective",
+        "scope": 878,
+        "sourceUnit": 9166,
+        "src": "671:25:3",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": "Global state store",
+        "fullyImplemented": true,
+        "id": 877,
+        "linearizedBaseContracts": [
+          877
+        ],
+        "name": "GlobalStore",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 876,
+            "name": "state",
+            "nodeType": "VariableDeclaration",
+            "scope": 877,
+            "src": "755:17:3",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_struct$_State_$9164_storage",
+              "typeString": "struct Store.State"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 875,
+              "name": "Store.State",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 9164,
+              "src": "755:11:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_struct$_State_$9164_storage_ptr",
+                "typeString": "struct Store.State"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 878,
+        "src": "728:47:3"
+      }
+    ],
+    "src": "613:162:3"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.8+commit.23d335f2.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.11",
+  "updatedAt": "2020-03-02T16:59:53.040Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {},
+    "notice": "Global state store"
+  }
+}
