@@ -1,0 +1,3719 @@
+{
+  "contractName": "Relayer",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.8+commit.23d335f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"methods\":{},\"title\":\"Relayer provides two distinct features for relayers. * First, Relayers can opt into or out of theBitFinance liquidity incentive system. Second, a relayer can register a delegate address. Delegates can send matching requests on behalf of relayers. The delegate scheme allows additional possibilities for smart contract interaction. on behalf of the relayer.\"},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/mikovainio/WebstormProjects/bitfinance-protocol/contracts/exchange/Relayer.sol\":\"Relayer\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/mikovainio/WebstormProjects/bitfinance-protocol/contracts/exchange/Relayer.sol\":{\"keccak256\":\"0xbcdfbd1a7cbee28e3322c4533ba019e29ae06838c37881dd6f2459bb655d0f93\",\"urls\":[\"bzzr://28f4517b55a7751db4a42cc4f77ca56905d4d9ac77567bb154035bc47479b737\"]},\"/Users/mikovainio/WebstormProjects/bitfinance-protocol/contracts/interfaces/IInterestModel.sol\":{\"keccak256\":\"0xf1504f73b0d7d875ada7dc96dd74ba31ea34dd925914ce4560bed764d670394a\",\"urls\":[\"bzzr://a3500b7ef30f6da4086d09e65df5c67217a55cb22afde4b94c8a98efd901f843\"]},\"/Users/mikovainio/WebstormProjects/bitfinance-protocol/contracts/interfaces/ILendingPoolToken.sol\":{\"keccak256\":\"0x80755286e1aaeeec8448d7f50093687ec3991ead055f50f1b091d2625aec1430\",\"urls\":[\"bzzr://069e3a576a158cb8334d5949811ace097808fde0553dcc76aabe6bb7c017e38a\"]},\"/Users/mikovainio/WebstormProjects/bitfinance-protocol/contracts/interfaces/IPriceOracle.sol\":{\"keccak256\":\"0x28578d0ff79f9497c53fd791cab2c3ce773db02d5ab72f9193d89ec4f62f9015\",\"urls\":[\"bzzr://98121b360b860aeda3c26bfbf48aac17bf3daa404e67d97f850920359214f24b\"]},\"/Users/mikovainio/WebstormProjects/bitfinance-protocol/contracts/lib/Consts.sol\":{\"keccak256\":\"0x5af3b6a1d774d6a67a0764c00674e867a977babadd5b60e706f8ad9f932876d1\",\"urls\":[\"bzzr://1d398e820580da7c9a107f552c96e76b043d2de4dcc0e8babc0fbf4b16cabfb2\"]},\"/Users/mikovainio/WebstormProjects/bitfinance-protocol/contracts/lib/Decimal.sol\":{\"keccak256\":\"0xe00666dfd860efa4274d7c55161de35b8dfc5022b192deb85422c803a4b762e2\",\"urls\":[\"bzzr://9bb57021a21938344062054731d80787193b2452ae56530f5a28a2b3e982faaf\"]},\"/Users/mikovainio/WebstormProjects/bitfinance-protocol/contracts/lib/EIP712.sol\":{\"keccak256\":\"0x0e15641f7f61a85f6f96f98ef2b25e862778dc561f7845a679fd38266e21edfe\",\"urls\":[\"bzzr://7d89d60eca6a5514e73e6c4fb00dcde07fea8e1dbdb98bb9635549cee6fdde9c\"]},\"/Users/mikovainio/WebstormProjects/bitfinance-protocol/contracts/lib/Events.sol\":{\"keccak256\":\"0x8911a127fa809423fcefaa444a8d43cfe1d1e445b14dc44fe66f9e8a2ca3fcbd\",\"urls\":[\"bzzr://886442111d3f9b8c49e7bc4d864b6148b3f059fca7b6e2c447685c7825b85bf8\"]},\"/Users/mikovainio/WebstormProjects/bitfinance-protocol/contracts/lib/SafeMath.sol\":{\"keccak256\":\"0x70c75c67729a507beddc658a4bac4990bbc4d009b3a6ac479c68699f30fbc9ca\",\"urls\":[\"bzzr://25677075bd77f9ac14c0aaaa20203d8e256602f4e487d76d92525731b9492a83\"]},\"/Users/mikovainio/WebstormProjects/bitfinance-protocol/contracts/lib/Signature.sol\":{\"keccak256\":\"0x6a60afaba16bffb6e85a9d75901c70921af4443997fa52b362c35cf6abd569f2\",\"urls\":[\"bzzr://7645712086f0150c6844f09e3a5d3d50537bdeb1cdd4024b6304707fd6c4347a\"]},\"/Users/mikovainio/WebstormProjects/bitfinance-protocol/contracts/lib/Store.sol\":{\"keccak256\":\"0x278a65d30c5dbfd4ac7d8eff046c78aa61c2f5dc8c8aa43a4a0b36f9d3f83b68\",\"urls\":[\"bzzr://36c798ef270a74112bb2779b083917883210b7de250d7602fa8816f01f64357d\"]},\"/Users/mikovainio/WebstormProjects/bitfinance-protocol/contracts/lib/Types.sol\":{\"keccak256\":\"0x000bbb9d61ca848064ba4a574c08b469fd170e932f7de7a5fed8040d5ea78b69\",\"urls\":[\"bzzr://701893d3731d04b6eba9b47f8ac83e9289e8ceb17cbb10af90caa47b241450ee\"]}},\"version\":1}",
+  "bytecode": "0x604c6023600b82828239805160001a607314601657fe5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea165627a7a7230582039cb9bcea6e0b386512bc8266acf66541a811e5f8f237f91c5c91d3eae06042f0029",
+  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea165627a7a7230582039cb9bcea6e0b386512bc8266acf66541a811e5f8f237f91c5c91d3eae06042f0029",
+  "sourceMap": "1084:1972:9:-;;132:2:-1;166:7;155:9;146:7;137:37;255:7;249:14;246:1;241:23;235:4;232:33;222:2;;269:9;222:2;293:9;290:1;283:20;323:4;314:7;306:22;347:7;338;331:24",
+  "deployedSourceMap": "1084:1972:9:-;;;;;;;;",
+  "source": "/*\n\n    Copyright 2019 The BitFinance Protocol\n\n    Licensed under the Apache License, Version 2.0 (the \"License\");\n    you may not use this file except in compliance with the License.\n    You may obtain a copy of the License at\n\n        http://www.apache.org/licenses/LICENSE-2.0\n\n    Unless required by applicable law or agreed to in writing, software\n    distributed under the License is distributed on an \"AS IS\" BASIS,\n    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n    See the License for the specific language governing permissions and\n    limitations under the License.\n\n*/\n\npragma solidity 0.5.8;\n\nimport \"../lib/Store.sol\";\nimport \"../lib/Events.sol\";\n\n/**\n * @title Relayer provides two distinct features for relayers.\n *\n * First, Relayers can opt into or out of theBitFinance liquidity incentive system.\n * Second, a relayer can register a delegate address.\n * Delegates can send matching requests on behalf of relayers.\n * The delegate scheme allows additional possibilities for smart contract interaction.\n * on behalf of the relayer.\n */\nlibrary Relayer {\n    /**\n     * Approve an address to match orders on behalf of msg.sender\n     */\n    function approveDelegate(\n        Store.State storage state,\n        address delegate\n    )\n        internal\n    {\n        state.relayer.relayerDelegates[msg.sender][delegate] = true;\n        Events.logRelayerApproveDelegate(msg.sender, delegate);\n    }\n\n    /**\n     * Revoke an existing delegate\n     */\n    function revokeDelegate(\n        Store.State storage state,\n        address delegate\n    )\n        internal\n    {\n        state.relayer.relayerDelegates[msg.sender][delegate] = false;\n        Events.logRelayerRevokeDelegate(msg.sender, delegate);\n    }\n\n    /**\n     * @return true if msg.sender is allowed to match orders which belong to relayer\n     */\n    function canMatchOrdersFrom(\n        Store.State storage state,\n        address relayer\n    )\n        internal\n        view\n        returns(bool)\n    {\n        return msg.sender == relayer || state.relayer.relayerDelegates[relayer][msg.sender] == true;\n    }\n\n    /**\n     * Join theBitFinance incentive system.\n     */\n    function joinIncentiveSystem(\n        Store.State storage state\n    )\n        internal\n    {\n        delete state.relayer.hasExited[msg.sender];\n        Events.logRelayerJoin(msg.sender);\n    }\n\n    /**\n     * Exit theBitFinance incentive system.\n     * For relayers that choose to opt-out, theBitFinance Protocol\n     * effective becomes a tokenless protocol.\n     */\n    function exitIncentiveSystem(\n        Store.State storage state\n    )\n        internal\n    {\n        state.relayer.hasExited[msg.sender] = true;\n        Events.logRelayerExit(msg.sender);\n    }\n\n    /**\n     * @return true if relayer is participating in theBitFinance incentive system.\n     */\n    function isParticipant(\n        Store.State storage state,\n        address relayer\n    )\n        internal\n        view\n        returns(bool)\n    {\n        return !state.relayer.hasExited[relayer];\n    }\n}",
+  "sourcePath": "/Users/mikovainio/WebstormProjects/bitfinance-protocol/contracts/exchange/Relayer.sol",
+  "ast": {
+    "absolutePath": "/Users/mikovainio/WebstormProjects/bitfinance-protocol/contracts/exchange/Relayer.sol",
+    "exportedSymbols": {
+      "Relayer": [
+        3004
+      ]
+    },
+    "id": 3005,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2855,
+        "literals": [
+          "solidity",
+          "0.5",
+          ".8"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "613:22:9"
+      },
+      {
+        "absolutePath": "/Users/mikovainio/WebstormProjects/bitfinance-protocol/contracts/lib/Store.sol",
+        "file": "../lib/Store.sol",
+        "id": 2856,
+        "nodeType": "ImportDirective",
+        "scope": 3005,
+        "sourceUnit": 9166,
+        "src": "637:26:9",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/mikovainio/WebstormProjects/bitfinance-protocol/contracts/lib/Events.sol",
+        "file": "../lib/Events.sol",
+        "id": 2857,
+        "nodeType": "ImportDirective",
+        "scope": 3005,
+        "sourceUnit": 7993,
+        "src": "664:27:9",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "library",
+        "documentation": "@title Relayer provides two distinct features for relayers.\n * First, Relayers can opt into or out of theBitFinance liquidity incentive system.\nSecond, a relayer can register a delegate address.\nDelegates can send matching requests on behalf of relayers.\nThe delegate scheme allows additional possibilities for smart contract interaction.\non behalf of the relayer.",
+        "fullyImplemented": true,
+        "id": 3004,
+        "linearizedBaseContracts": [
+          3004
+        ],
+        "name": "Relayer",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 2885,
+              "nodeType": "Block",
+              "src": "1301:140:9",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 2875,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 2864,
+                              "name": "state",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 2859,
+                              "src": "1311:5:9",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_State_$9164_storage_ptr",
+                                "typeString": "struct Store.State storage pointer"
+                              }
+                            },
+                            "id": 2870,
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "relayer",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 9161,
+                            "src": "1311:13:9",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_RelayerState_$9065_storage",
+                              "typeString": "struct Store.RelayerState storage ref"
+                            }
+                          },
+                          "id": 2871,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "relayerDelegates",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 9060,
+                          "src": "1311:30:9",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_address_$_t_mapping$_t_address_$_t_bool_$_$",
+                            "typeString": "mapping(address => mapping(address => bool))"
+                          }
+                        },
+                        "id": 2872,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 2867,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 12197,
+                            "src": "1342:3:9",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 2868,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "sender",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "1342:10:9",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "1311:42:9",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                          "typeString": "mapping(address => bool)"
+                        }
+                      },
+                      "id": 2873,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 2869,
+                        "name": "delegate",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2861,
+                        "src": "1354:8:9",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "1311:52:9",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "hexValue": "74727565",
+                      "id": 2874,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "bool",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "1366:4:9",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      },
+                      "value": "true"
+                    },
+                    "src": "1311:59:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 2876,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1311:59:9"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 2880,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12197,
+                          "src": "1413:3:9",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 2881,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "1413:10:9",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 2882,
+                        "name": "delegate",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2861,
+                        "src": "1425:8:9",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 2877,
+                        "name": "Events",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 7992,
+                        "src": "1380:6:9",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_Events_$7992_$",
+                          "typeString": "type(library Events)"
+                        }
+                      },
+                      "id": 2879,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "logRelayerApproveDelegate",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 7874,
+                      "src": "1380:32:9",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_address_$returns$__$",
+                        "typeString": "function (address,address)"
+                      }
+                    },
+                    "id": 2883,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1380:54:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2884,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1380:54:9"
+                }
+              ]
+            },
+            "documentation": "Approve an address to match orders on behalf of msg.sender",
+            "id": 2886,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "approveDelegate",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2862,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2859,
+                  "name": "state",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2886,
+                  "src": "1222:25:9",
+                  "stateVariable": false,
+                  "storageLocation": "storage",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_State_$9164_storage_ptr",
+                    "typeString": "struct Store.State"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 2858,
+                    "name": "Store.State",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 9164,
+                    "src": "1222:11:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_State_$9164_storage_ptr",
+                      "typeString": "struct Store.State"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2861,
+                  "name": "delegate",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2886,
+                  "src": "1257:16:9",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2860,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1257:7:9",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1212:67:9"
+            },
+            "returnParameters": {
+              "id": 2863,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1301:0:9"
+            },
+            "scope": 3004,
+            "src": "1188:253:9",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 2914,
+              "nodeType": "Block",
+              "src": "1610:140:9",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 2904,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 2893,
+                              "name": "state",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 2888,
+                              "src": "1620:5:9",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_State_$9164_storage_ptr",
+                                "typeString": "struct Store.State storage pointer"
+                              }
+                            },
+                            "id": 2899,
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "relayer",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 9161,
+                            "src": "1620:13:9",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_RelayerState_$9065_storage",
+                              "typeString": "struct Store.RelayerState storage ref"
+                            }
+                          },
+                          "id": 2900,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "relayerDelegates",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 9060,
+                          "src": "1620:30:9",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_address_$_t_mapping$_t_address_$_t_bool_$_$",
+                            "typeString": "mapping(address => mapping(address => bool))"
+                          }
+                        },
+                        "id": 2901,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 2896,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 12197,
+                            "src": "1651:3:9",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 2897,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "sender",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "1651:10:9",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "1620:42:9",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                          "typeString": "mapping(address => bool)"
+                        }
+                      },
+                      "id": 2902,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 2898,
+                        "name": "delegate",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2890,
+                        "src": "1663:8:9",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "1620:52:9",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "hexValue": "66616c7365",
+                      "id": 2903,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "bool",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "1675:5:9",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      },
+                      "value": "false"
+                    },
+                    "src": "1620:60:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 2905,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1620:60:9"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 2909,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12197,
+                          "src": "1722:3:9",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 2910,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "1722:10:9",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 2911,
+                        "name": "delegate",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2890,
+                        "src": "1734:8:9",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 2906,
+                        "name": "Events",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 7992,
+                        "src": "1690:6:9",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_Events_$7992_$",
+                          "typeString": "type(library Events)"
+                        }
+                      },
+                      "id": 2908,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "logRelayerRevokeDelegate",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 7893,
+                      "src": "1690:31:9",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_address_$returns$__$",
+                        "typeString": "function (address,address)"
+                      }
+                    },
+                    "id": 2912,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1690:53:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2913,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1690:53:9"
+                }
+              ]
+            },
+            "documentation": "Revoke an existing delegate",
+            "id": 2915,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "revokeDelegate",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2891,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2888,
+                  "name": "state",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2915,
+                  "src": "1531:25:9",
+                  "stateVariable": false,
+                  "storageLocation": "storage",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_State_$9164_storage_ptr",
+                    "typeString": "struct Store.State"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 2887,
+                    "name": "Store.State",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 9164,
+                    "src": "1531:11:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_State_$9164_storage_ptr",
+                      "typeString": "struct Store.State"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2890,
+                  "name": "delegate",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2915,
+                  "src": "1566:16:9",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2889,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1566:7:9",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1521:67:9"
+            },
+            "returnParameters": {
+              "id": 2892,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1610:0:9"
+            },
+            "scope": 3004,
+            "src": "1498:252:9",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 2940,
+              "nodeType": "Block",
+              "src": "2007:108:9",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    },
+                    "id": 2938,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "commonType": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      },
+                      "id": 2927,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "leftExpression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 2924,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12197,
+                          "src": "2024:3:9",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 2925,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "2024:10:9",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      "nodeType": "BinaryOperation",
+                      "operator": "==",
+                      "rightExpression": {
+                        "argumentTypes": null,
+                        "id": 2926,
+                        "name": "relayer",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2919,
+                        "src": "2038:7:9",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "src": "2024:21:9",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "||",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "commonType": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      },
+                      "id": 2937,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "leftExpression": {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "baseExpression": {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "expression": {
+                                "argumentTypes": null,
+                                "id": 2928,
+                                "name": "state",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 2917,
+                                "src": "2049:5:9",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_struct$_State_$9164_storage_ptr",
+                                  "typeString": "struct Store.State storage pointer"
+                                }
+                              },
+                              "id": 2929,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberName": "relayer",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": 9161,
+                              "src": "2049:13:9",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_RelayerState_$9065_storage",
+                                "typeString": "struct Store.RelayerState storage ref"
+                              }
+                            },
+                            "id": 2930,
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "relayerDelegates",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 9060,
+                            "src": "2049:30:9",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_mapping$_t_address_$_t_mapping$_t_address_$_t_bool_$_$",
+                              "typeString": "mapping(address => mapping(address => bool))"
+                            }
+                          },
+                          "id": 2932,
+                          "indexExpression": {
+                            "argumentTypes": null,
+                            "id": 2931,
+                            "name": "relayer",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 2919,
+                            "src": "2080:7:9",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "IndexAccess",
+                          "src": "2049:39:9",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                            "typeString": "mapping(address => bool)"
+                          }
+                        },
+                        "id": 2935,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 2933,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 12197,
+                            "src": "2089:3:9",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 2934,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "sender",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "2089:10:9",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "2049:51:9",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      "nodeType": "BinaryOperation",
+                      "operator": "==",
+                      "rightExpression": {
+                        "argumentTypes": null,
+                        "hexValue": "74727565",
+                        "id": 2936,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "bool",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "2104:4:9",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "value": "true"
+                      },
+                      "src": "2049:59:9",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "src": "2024:84:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 2923,
+                  "id": 2939,
+                  "nodeType": "Return",
+                  "src": "2017:91:9"
+                }
+              ]
+            },
+            "documentation": "@return true if msg.sender is allowed to match orders which belong to relayer",
+            "id": 2941,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "canMatchOrdersFrom",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2920,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2917,
+                  "name": "state",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2941,
+                  "src": "1894:25:9",
+                  "stateVariable": false,
+                  "storageLocation": "storage",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_State_$9164_storage_ptr",
+                    "typeString": "struct Store.State"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 2916,
+                    "name": "Store.State",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 9164,
+                    "src": "1894:11:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_State_$9164_storage_ptr",
+                      "typeString": "struct Store.State"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2919,
+                  "name": "relayer",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2941,
+                  "src": "1929:15:9",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2918,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1929:7:9",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1884:66:9"
+            },
+            "returnParameters": {
+              "id": 2923,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2922,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2941,
+                  "src": "1997:4:9",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 2921,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1997:4:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1996:6:9"
+            },
+            "scope": 3004,
+            "src": "1857:258:9",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 2961,
+              "nodeType": "Block",
+              "src": "2272:102:9",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 2952,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "delete",
+                    "prefix": true,
+                    "src": "2282:42:9",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 2946,
+                            "name": "state",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 2943,
+                            "src": "2289:5:9",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_State_$9164_storage_ptr",
+                              "typeString": "struct Store.State storage pointer"
+                            }
+                          },
+                          "id": 2947,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "relayer",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 9161,
+                          "src": "2289:13:9",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_RelayerState_$9065_storage",
+                            "typeString": "struct Store.RelayerState storage ref"
+                          }
+                        },
+                        "id": 2948,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "hasExited",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 9064,
+                        "src": "2289:23:9",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                          "typeString": "mapping(address => bool)"
+                        }
+                      },
+                      "id": 2951,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 2949,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12197,
+                          "src": "2313:3:9",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 2950,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "2313:10:9",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "2289:35:9",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2953,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2282:42:9"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 2957,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12197,
+                          "src": "2356:3:9",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 2958,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "2356:10:9",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 2954,
+                        "name": "Events",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 7992,
+                        "src": "2334:6:9",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_Events_$7992_$",
+                          "typeString": "type(library Events)"
+                        }
+                      },
+                      "id": 2956,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "logRelayerJoin",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 7921,
+                      "src": "2334:21:9",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 2959,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2334:33:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2960,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2334:33:9"
+                }
+              ]
+            },
+            "documentation": "Join theBitFinance incentive system.",
+            "id": 2962,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "joinIncentiveSystem",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2944,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2943,
+                  "name": "state",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2962,
+                  "src": "2219:25:9",
+                  "stateVariable": false,
+                  "storageLocation": "storage",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_State_$9164_storage_ptr",
+                    "typeString": "struct Store.State"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 2942,
+                    "name": "Store.State",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 9164,
+                    "src": "2219:11:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_State_$9164_storage_ptr",
+                      "typeString": "struct Store.State"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2209:41:9"
+            },
+            "returnParameters": {
+              "id": 2945,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2272:0:9"
+            },
+            "scope": 3004,
+            "src": "2181:193:9",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 2985,
+              "nodeType": "Block",
+              "src": "2645:102:9",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 2976,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 2967,
+                            "name": "state",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 2964,
+                            "src": "2655:5:9",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_State_$9164_storage_ptr",
+                              "typeString": "struct Store.State storage pointer"
+                            }
+                          },
+                          "id": 2972,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "relayer",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 9161,
+                          "src": "2655:13:9",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_RelayerState_$9065_storage",
+                            "typeString": "struct Store.RelayerState storage ref"
+                          }
+                        },
+                        "id": 2973,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "hasExited",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 9064,
+                        "src": "2655:23:9",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                          "typeString": "mapping(address => bool)"
+                        }
+                      },
+                      "id": 2974,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 2970,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12197,
+                          "src": "2679:3:9",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 2971,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "2679:10:9",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "2655:35:9",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "hexValue": "74727565",
+                      "id": 2975,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "bool",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "2693:4:9",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      },
+                      "value": "true"
+                    },
+                    "src": "2655:42:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 2977,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2655:42:9"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 2981,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12197,
+                          "src": "2729:3:9",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 2982,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "2729:10:9",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 2978,
+                        "name": "Events",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 7992,
+                        "src": "2707:6:9",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_Events_$7992_$",
+                          "typeString": "type(library Events)"
+                        }
+                      },
+                      "id": 2980,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "logRelayerExit",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 7907,
+                      "src": "2707:21:9",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 2983,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2707:33:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2984,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2707:33:9"
+                }
+              ]
+            },
+            "documentation": "Exit theBitFinance incentive system.\nFor relayers that choose to opt-out, theBitFinance Protocol\neffective becomes a tokenless protocol.",
+            "id": 2986,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "exitIncentiveSystem",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2965,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2964,
+                  "name": "state",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2986,
+                  "src": "2592:25:9",
+                  "stateVariable": false,
+                  "storageLocation": "storage",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_State_$9164_storage_ptr",
+                    "typeString": "struct Store.State"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 2963,
+                    "name": "Store.State",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 9164,
+                    "src": "2592:11:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_State_$9164_storage_ptr",
+                      "typeString": "struct Store.State"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2582:41:9"
+            },
+            "returnParameters": {
+              "id": 2966,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2645:0:9"
+            },
+            "scope": 3004,
+            "src": "2554:193:9",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 3002,
+              "nodeType": "Block",
+              "src": "2997:57:9",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 3000,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "!",
+                    "prefix": true,
+                    "src": "3014:33:9",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 2995,
+                            "name": "state",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 2988,
+                            "src": "3015:5:9",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_State_$9164_storage_ptr",
+                              "typeString": "struct Store.State storage pointer"
+                            }
+                          },
+                          "id": 2996,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "relayer",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 9161,
+                          "src": "3015:13:9",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_RelayerState_$9065_storage",
+                            "typeString": "struct Store.RelayerState storage ref"
+                          }
+                        },
+                        "id": 2997,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "hasExited",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 9064,
+                        "src": "3015:23:9",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                          "typeString": "mapping(address => bool)"
+                        }
+                      },
+                      "id": 2999,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 2998,
+                        "name": "relayer",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2990,
+                        "src": "3039:7:9",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "IndexAccess",
+                      "src": "3015:32:9",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 2994,
+                  "id": 3001,
+                  "nodeType": "Return",
+                  "src": "3007:40:9"
+                }
+              ]
+            },
+            "documentation": "@return true if relayer is participating in theBitFinance incentive system.",
+            "id": 3003,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isParticipant",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2991,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2988,
+                  "name": "state",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3003,
+                  "src": "2884:25:9",
+                  "stateVariable": false,
+                  "storageLocation": "storage",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_State_$9164_storage_ptr",
+                    "typeString": "struct Store.State"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 2987,
+                    "name": "Store.State",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 9164,
+                    "src": "2884:11:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_State_$9164_storage_ptr",
+                      "typeString": "struct Store.State"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2990,
+                  "name": "relayer",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3003,
+                  "src": "2919:15:9",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2989,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2919:7:9",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2874:66:9"
+            },
+            "returnParameters": {
+              "id": 2994,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2993,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3003,
+                  "src": "2987:4:9",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 2992,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2987:4:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2986:6:9"
+            },
+            "scope": 3004,
+            "src": "2852:202:9",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 3005,
+        "src": "1084:1972:9"
+      }
+    ],
+    "src": "613:2443:9"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/mikovainio/WebstormProjects/bitfinance-protocol/contracts/exchange/Relayer.sol",
+    "exportedSymbols": {
+      "Relayer": [
+        3004
+      ]
+    },
+    "id": 3005,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2855,
+        "literals": [
+          "solidity",
+          "0.5",
+          ".8"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "613:22:9"
+      },
+      {
+        "absolutePath": "/Users/mikovainio/WebstormProjects/bitfinance-protocol/contracts/lib/Store.sol",
+        "file": "../lib/Store.sol",
+        "id": 2856,
+        "nodeType": "ImportDirective",
+        "scope": 3005,
+        "sourceUnit": 9166,
+        "src": "637:26:9",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/mikovainio/WebstormProjects/bitfinance-protocol/contracts/lib/Events.sol",
+        "file": "../lib/Events.sol",
+        "id": 2857,
+        "nodeType": "ImportDirective",
+        "scope": 3005,
+        "sourceUnit": 7993,
+        "src": "664:27:9",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "library",
+        "documentation": "@title Relayer provides two distinct features for relayers.\n * First, Relayers can opt into or out of theBitFinance liquidity incentive system.\nSecond, a relayer can register a delegate address.\nDelegates can send matching requests on behalf of relayers.\nThe delegate scheme allows additional possibilities for smart contract interaction.\non behalf of the relayer.",
+        "fullyImplemented": true,
+        "id": 3004,
+        "linearizedBaseContracts": [
+          3004
+        ],
+        "name": "Relayer",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 2885,
+              "nodeType": "Block",
+              "src": "1301:140:9",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 2875,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 2864,
+                              "name": "state",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 2859,
+                              "src": "1311:5:9",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_State_$9164_storage_ptr",
+                                "typeString": "struct Store.State storage pointer"
+                              }
+                            },
+                            "id": 2870,
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "relayer",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 9161,
+                            "src": "1311:13:9",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_RelayerState_$9065_storage",
+                              "typeString": "struct Store.RelayerState storage ref"
+                            }
+                          },
+                          "id": 2871,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "relayerDelegates",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 9060,
+                          "src": "1311:30:9",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_address_$_t_mapping$_t_address_$_t_bool_$_$",
+                            "typeString": "mapping(address => mapping(address => bool))"
+                          }
+                        },
+                        "id": 2872,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 2867,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 12197,
+                            "src": "1342:3:9",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 2868,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "sender",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "1342:10:9",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "1311:42:9",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                          "typeString": "mapping(address => bool)"
+                        }
+                      },
+                      "id": 2873,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 2869,
+                        "name": "delegate",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2861,
+                        "src": "1354:8:9",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "1311:52:9",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "hexValue": "74727565",
+                      "id": 2874,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "bool",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "1366:4:9",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      },
+                      "value": "true"
+                    },
+                    "src": "1311:59:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 2876,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1311:59:9"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 2880,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12197,
+                          "src": "1413:3:9",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 2881,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "1413:10:9",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 2882,
+                        "name": "delegate",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2861,
+                        "src": "1425:8:9",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 2877,
+                        "name": "Events",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 7992,
+                        "src": "1380:6:9",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_Events_$7992_$",
+                          "typeString": "type(library Events)"
+                        }
+                      },
+                      "id": 2879,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "logRelayerApproveDelegate",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 7874,
+                      "src": "1380:32:9",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_address_$returns$__$",
+                        "typeString": "function (address,address)"
+                      }
+                    },
+                    "id": 2883,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1380:54:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2884,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1380:54:9"
+                }
+              ]
+            },
+            "documentation": "Approve an address to match orders on behalf of msg.sender",
+            "id": 2886,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "approveDelegate",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2862,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2859,
+                  "name": "state",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2886,
+                  "src": "1222:25:9",
+                  "stateVariable": false,
+                  "storageLocation": "storage",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_State_$9164_storage_ptr",
+                    "typeString": "struct Store.State"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 2858,
+                    "name": "Store.State",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 9164,
+                    "src": "1222:11:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_State_$9164_storage_ptr",
+                      "typeString": "struct Store.State"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2861,
+                  "name": "delegate",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2886,
+                  "src": "1257:16:9",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2860,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1257:7:9",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1212:67:9"
+            },
+            "returnParameters": {
+              "id": 2863,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1301:0:9"
+            },
+            "scope": 3004,
+            "src": "1188:253:9",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 2914,
+              "nodeType": "Block",
+              "src": "1610:140:9",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 2904,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 2893,
+                              "name": "state",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 2888,
+                              "src": "1620:5:9",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_State_$9164_storage_ptr",
+                                "typeString": "struct Store.State storage pointer"
+                              }
+                            },
+                            "id": 2899,
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "relayer",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 9161,
+                            "src": "1620:13:9",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_RelayerState_$9065_storage",
+                              "typeString": "struct Store.RelayerState storage ref"
+                            }
+                          },
+                          "id": 2900,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "relayerDelegates",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 9060,
+                          "src": "1620:30:9",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_address_$_t_mapping$_t_address_$_t_bool_$_$",
+                            "typeString": "mapping(address => mapping(address => bool))"
+                          }
+                        },
+                        "id": 2901,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 2896,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 12197,
+                            "src": "1651:3:9",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 2897,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "sender",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "1651:10:9",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "1620:42:9",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                          "typeString": "mapping(address => bool)"
+                        }
+                      },
+                      "id": 2902,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 2898,
+                        "name": "delegate",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2890,
+                        "src": "1663:8:9",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "1620:52:9",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "hexValue": "66616c7365",
+                      "id": 2903,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "bool",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "1675:5:9",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      },
+                      "value": "false"
+                    },
+                    "src": "1620:60:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 2905,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1620:60:9"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 2909,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12197,
+                          "src": "1722:3:9",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 2910,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "1722:10:9",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 2911,
+                        "name": "delegate",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2890,
+                        "src": "1734:8:9",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 2906,
+                        "name": "Events",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 7992,
+                        "src": "1690:6:9",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_Events_$7992_$",
+                          "typeString": "type(library Events)"
+                        }
+                      },
+                      "id": 2908,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "logRelayerRevokeDelegate",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 7893,
+                      "src": "1690:31:9",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_address_$returns$__$",
+                        "typeString": "function (address,address)"
+                      }
+                    },
+                    "id": 2912,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1690:53:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2913,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1690:53:9"
+                }
+              ]
+            },
+            "documentation": "Revoke an existing delegate",
+            "id": 2915,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "revokeDelegate",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2891,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2888,
+                  "name": "state",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2915,
+                  "src": "1531:25:9",
+                  "stateVariable": false,
+                  "storageLocation": "storage",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_State_$9164_storage_ptr",
+                    "typeString": "struct Store.State"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 2887,
+                    "name": "Store.State",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 9164,
+                    "src": "1531:11:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_State_$9164_storage_ptr",
+                      "typeString": "struct Store.State"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2890,
+                  "name": "delegate",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2915,
+                  "src": "1566:16:9",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2889,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1566:7:9",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1521:67:9"
+            },
+            "returnParameters": {
+              "id": 2892,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1610:0:9"
+            },
+            "scope": 3004,
+            "src": "1498:252:9",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 2940,
+              "nodeType": "Block",
+              "src": "2007:108:9",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    },
+                    "id": 2938,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "commonType": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      },
+                      "id": 2927,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "leftExpression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 2924,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12197,
+                          "src": "2024:3:9",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 2925,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "2024:10:9",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      "nodeType": "BinaryOperation",
+                      "operator": "==",
+                      "rightExpression": {
+                        "argumentTypes": null,
+                        "id": 2926,
+                        "name": "relayer",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2919,
+                        "src": "2038:7:9",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "src": "2024:21:9",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "||",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "commonType": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      },
+                      "id": 2937,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "leftExpression": {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "baseExpression": {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "expression": {
+                                "argumentTypes": null,
+                                "id": 2928,
+                                "name": "state",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 2917,
+                                "src": "2049:5:9",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_struct$_State_$9164_storage_ptr",
+                                  "typeString": "struct Store.State storage pointer"
+                                }
+                              },
+                              "id": 2929,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberName": "relayer",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": 9161,
+                              "src": "2049:13:9",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_RelayerState_$9065_storage",
+                                "typeString": "struct Store.RelayerState storage ref"
+                              }
+                            },
+                            "id": 2930,
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "relayerDelegates",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 9060,
+                            "src": "2049:30:9",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_mapping$_t_address_$_t_mapping$_t_address_$_t_bool_$_$",
+                              "typeString": "mapping(address => mapping(address => bool))"
+                            }
+                          },
+                          "id": 2932,
+                          "indexExpression": {
+                            "argumentTypes": null,
+                            "id": 2931,
+                            "name": "relayer",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 2919,
+                            "src": "2080:7:9",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "IndexAccess",
+                          "src": "2049:39:9",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                            "typeString": "mapping(address => bool)"
+                          }
+                        },
+                        "id": 2935,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 2933,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 12197,
+                            "src": "2089:3:9",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 2934,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "sender",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "2089:10:9",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "2049:51:9",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      "nodeType": "BinaryOperation",
+                      "operator": "==",
+                      "rightExpression": {
+                        "argumentTypes": null,
+                        "hexValue": "74727565",
+                        "id": 2936,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "bool",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "2104:4:9",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "value": "true"
+                      },
+                      "src": "2049:59:9",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "src": "2024:84:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 2923,
+                  "id": 2939,
+                  "nodeType": "Return",
+                  "src": "2017:91:9"
+                }
+              ]
+            },
+            "documentation": "@return true if msg.sender is allowed to match orders which belong to relayer",
+            "id": 2941,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "canMatchOrdersFrom",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2920,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2917,
+                  "name": "state",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2941,
+                  "src": "1894:25:9",
+                  "stateVariable": false,
+                  "storageLocation": "storage",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_State_$9164_storage_ptr",
+                    "typeString": "struct Store.State"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 2916,
+                    "name": "Store.State",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 9164,
+                    "src": "1894:11:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_State_$9164_storage_ptr",
+                      "typeString": "struct Store.State"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2919,
+                  "name": "relayer",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2941,
+                  "src": "1929:15:9",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2918,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1929:7:9",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1884:66:9"
+            },
+            "returnParameters": {
+              "id": 2923,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2922,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2941,
+                  "src": "1997:4:9",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 2921,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1997:4:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1996:6:9"
+            },
+            "scope": 3004,
+            "src": "1857:258:9",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 2961,
+              "nodeType": "Block",
+              "src": "2272:102:9",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 2952,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "delete",
+                    "prefix": true,
+                    "src": "2282:42:9",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 2946,
+                            "name": "state",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 2943,
+                            "src": "2289:5:9",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_State_$9164_storage_ptr",
+                              "typeString": "struct Store.State storage pointer"
+                            }
+                          },
+                          "id": 2947,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "relayer",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 9161,
+                          "src": "2289:13:9",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_RelayerState_$9065_storage",
+                            "typeString": "struct Store.RelayerState storage ref"
+                          }
+                        },
+                        "id": 2948,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "hasExited",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 9064,
+                        "src": "2289:23:9",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                          "typeString": "mapping(address => bool)"
+                        }
+                      },
+                      "id": 2951,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 2949,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12197,
+                          "src": "2313:3:9",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 2950,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "2313:10:9",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "2289:35:9",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2953,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2282:42:9"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 2957,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12197,
+                          "src": "2356:3:9",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 2958,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "2356:10:9",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 2954,
+                        "name": "Events",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 7992,
+                        "src": "2334:6:9",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_Events_$7992_$",
+                          "typeString": "type(library Events)"
+                        }
+                      },
+                      "id": 2956,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "logRelayerJoin",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 7921,
+                      "src": "2334:21:9",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 2959,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2334:33:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2960,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2334:33:9"
+                }
+              ]
+            },
+            "documentation": "Join theBitFinance incentive system.",
+            "id": 2962,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "joinIncentiveSystem",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2944,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2943,
+                  "name": "state",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2962,
+                  "src": "2219:25:9",
+                  "stateVariable": false,
+                  "storageLocation": "storage",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_State_$9164_storage_ptr",
+                    "typeString": "struct Store.State"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 2942,
+                    "name": "Store.State",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 9164,
+                    "src": "2219:11:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_State_$9164_storage_ptr",
+                      "typeString": "struct Store.State"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2209:41:9"
+            },
+            "returnParameters": {
+              "id": 2945,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2272:0:9"
+            },
+            "scope": 3004,
+            "src": "2181:193:9",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 2985,
+              "nodeType": "Block",
+              "src": "2645:102:9",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 2976,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 2967,
+                            "name": "state",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 2964,
+                            "src": "2655:5:9",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_State_$9164_storage_ptr",
+                              "typeString": "struct Store.State storage pointer"
+                            }
+                          },
+                          "id": 2972,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "relayer",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 9161,
+                          "src": "2655:13:9",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_RelayerState_$9065_storage",
+                            "typeString": "struct Store.RelayerState storage ref"
+                          }
+                        },
+                        "id": 2973,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "hasExited",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 9064,
+                        "src": "2655:23:9",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                          "typeString": "mapping(address => bool)"
+                        }
+                      },
+                      "id": 2974,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 2970,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12197,
+                          "src": "2679:3:9",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 2971,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "2679:10:9",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "2655:35:9",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "hexValue": "74727565",
+                      "id": 2975,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "bool",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "2693:4:9",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      },
+                      "value": "true"
+                    },
+                    "src": "2655:42:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 2977,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2655:42:9"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 2981,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12197,
+                          "src": "2729:3:9",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 2982,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "2729:10:9",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 2978,
+                        "name": "Events",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 7992,
+                        "src": "2707:6:9",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_Events_$7992_$",
+                          "typeString": "type(library Events)"
+                        }
+                      },
+                      "id": 2980,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "logRelayerExit",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 7907,
+                      "src": "2707:21:9",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 2983,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2707:33:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2984,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2707:33:9"
+                }
+              ]
+            },
+            "documentation": "Exit theBitFinance incentive system.\nFor relayers that choose to opt-out, theBitFinance Protocol\neffective becomes a tokenless protocol.",
+            "id": 2986,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "exitIncentiveSystem",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2965,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2964,
+                  "name": "state",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2986,
+                  "src": "2592:25:9",
+                  "stateVariable": false,
+                  "storageLocation": "storage",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_State_$9164_storage_ptr",
+                    "typeString": "struct Store.State"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 2963,
+                    "name": "Store.State",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 9164,
+                    "src": "2592:11:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_State_$9164_storage_ptr",
+                      "typeString": "struct Store.State"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2582:41:9"
+            },
+            "returnParameters": {
+              "id": 2966,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2645:0:9"
+            },
+            "scope": 3004,
+            "src": "2554:193:9",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 3002,
+              "nodeType": "Block",
+              "src": "2997:57:9",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 3000,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "!",
+                    "prefix": true,
+                    "src": "3014:33:9",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 2995,
+                            "name": "state",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 2988,
+                            "src": "3015:5:9",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_State_$9164_storage_ptr",
+                              "typeString": "struct Store.State storage pointer"
+                            }
+                          },
+                          "id": 2996,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "relayer",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 9161,
+                          "src": "3015:13:9",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_RelayerState_$9065_storage",
+                            "typeString": "struct Store.RelayerState storage ref"
+                          }
+                        },
+                        "id": 2997,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "hasExited",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 9064,
+                        "src": "3015:23:9",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                          "typeString": "mapping(address => bool)"
+                        }
+                      },
+                      "id": 2999,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 2998,
+                        "name": "relayer",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2990,
+                        "src": "3039:7:9",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "IndexAccess",
+                      "src": "3015:32:9",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 2994,
+                  "id": 3001,
+                  "nodeType": "Return",
+                  "src": "3007:40:9"
+                }
+              ]
+            },
+            "documentation": "@return true if relayer is participating in theBitFinance incentive system.",
+            "id": 3003,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isParticipant",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2991,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2988,
+                  "name": "state",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3003,
+                  "src": "2884:25:9",
+                  "stateVariable": false,
+                  "storageLocation": "storage",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_State_$9164_storage_ptr",
+                    "typeString": "struct Store.State"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 2987,
+                    "name": "Store.State",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 9164,
+                    "src": "2884:11:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_State_$9164_storage_ptr",
+                      "typeString": "struct Store.State"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2990,
+                  "name": "relayer",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3003,
+                  "src": "2919:15:9",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2989,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2919:7:9",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2874:66:9"
+            },
+            "returnParameters": {
+              "id": 2994,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2993,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3003,
+                  "src": "2987:4:9",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 2992,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2987:4:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2986:6:9"
+            },
+            "scope": 3004,
+            "src": "2852:202:9",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 3005,
+        "src": "1084:1972:9"
+      }
+    ],
+    "src": "613:2443:9"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.8+commit.23d335f2.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.11",
+  "updatedAt": "2020-03-02T16:59:53.123Z",
+  "devdoc": {
+    "methods": {},
+    "title": "Relayer provides two distinct features for relayers. * First, Relayers can opt into or out of theBitFinance liquidity incentive system. Second, a relayer can register a delegate address. Delegates can send matching requests on behalf of relayers. The delegate scheme allows additional possibilities for smart contract interaction. on behalf of the relayer."
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

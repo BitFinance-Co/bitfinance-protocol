@@ -1,0 +1,293 @@
+{
+  "contractName": "IPriceOracle",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "asset",
+          "type": "address"
+        }
+      ],
+      "name": "getPrice",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.8+commit.23d335f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[{\"name\":\"asset\",\"type\":\"address\"}],\"name\":\"getPrice\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{\"getPrice(address)\":{\"notice\":\"return USD price of token \"}},\"notice\":\"Get USD price of asset, The return value is the USD value of the 10**18 lowest units of the asset. * For example, Ether has a 18 decimals, so the price is for each Ether. But for a token has 10 decimals, the price is for 10**8 tokens.\"}},\"settings\":{\"compilationTarget\":{\"/Users/mikovainio/WebstormProjects/bitfinance-protocol/contracts/interfaces/IPriceOracle.sol\":\"IPriceOracle\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/mikovainio/WebstormProjects/bitfinance-protocol/contracts/interfaces/IPriceOracle.sol\":{\"keccak256\":\"0x28578d0ff79f9497c53fd791cab2c3ce773db02d5ab72f9193d89ec4f62f9015\",\"urls\":[\"bzzr://98121b360b860aeda3c26bfbf48aac17bf3daa404e67d97f850920359214f24b\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity 0.5.8;\n\n/**\n * Get USD price of asset,\n * The return value is the USD value of the 10**18 lowest units of the asset.\n *\n * For example, Ether has a 18 decimals, so the price is for each Ether.\n * But for a token has 10 decimals, the price is for 10**8 tokens.\n */\ninterface IPriceOracle {\n    /** return USD price of token */\n    function getPrice(\n        address asset\n    )\n        external\n        view\n        returns (uint256);\n}",
+  "sourcePath": "/Users/mikovainio/WebstormProjects/bitfinance-protocol/contracts/interfaces/IPriceOracle.sol",
+  "ast": {
+    "absolutePath": "/Users/mikovainio/WebstormProjects/bitfinance-protocol/contracts/interfaces/IPriceOracle.sol",
+    "exportedSymbols": {
+      "IPriceOracle": [
+        6959
+      ]
+    },
+    "id": 6960,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 6951,
+        "literals": [
+          "solidity",
+          "0.5",
+          ".8"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:22:27"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": "Get USD price of asset,\nThe return value is the USD value of the 10**18 lowest units of the asset.\n * For example, Ether has a 18 decimals, so the price is for each Ether.\nBut for a token has 10 decimals, the price is for 10**8 tokens.",
+        "fullyImplemented": false,
+        "id": 6959,
+        "linearizedBaseContracts": [
+          6959
+        ],
+        "name": "IPriceOracle",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": "return USD price of token ",
+            "id": 6958,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getPrice",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6954,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6953,
+                  "name": "asset",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6958,
+                  "src": "373:13:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6952,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "373:7:27",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "363:29:27"
+            },
+            "returnParameters": {
+              "id": 6957,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6956,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6958,
+                  "src": "440:7:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6955,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "440:7:27",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "439:9:27"
+            },
+            "scope": 6959,
+            "src": "346:103:27",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 6960,
+        "src": "280:171:27"
+      }
+    ],
+    "src": "0:451:27"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/mikovainio/WebstormProjects/bitfinance-protocol/contracts/interfaces/IPriceOracle.sol",
+    "exportedSymbols": {
+      "IPriceOracle": [
+        6959
+      ]
+    },
+    "id": 6960,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 6951,
+        "literals": [
+          "solidity",
+          "0.5",
+          ".8"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:22:27"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": "Get USD price of asset,\nThe return value is the USD value of the 10**18 lowest units of the asset.\n * For example, Ether has a 18 decimals, so the price is for each Ether.\nBut for a token has 10 decimals, the price is for 10**8 tokens.",
+        "fullyImplemented": false,
+        "id": 6959,
+        "linearizedBaseContracts": [
+          6959
+        ],
+        "name": "IPriceOracle",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": "return USD price of token ",
+            "id": 6958,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getPrice",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6954,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6953,
+                  "name": "asset",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6958,
+                  "src": "373:13:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6952,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "373:7:27",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "363:29:27"
+            },
+            "returnParameters": {
+              "id": 6957,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6956,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6958,
+                  "src": "440:7:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6955,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "440:7:27",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "439:9:27"
+            },
+            "scope": 6959,
+            "src": "346:103:27",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 6960,
+        "src": "280:171:27"
+      }
+    ],
+    "src": "0:451:27"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.8+commit.23d335f2.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.11",
+  "updatedAt": "2020-03-02T16:59:53.323Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {
+      "getPrice(address)": {
+        "notice": "return USD price of token "
+      }
+    },
+    "notice": "Get USD price of asset, The return value is the USD value of the 10**18 lowest units of the asset. * For example, Ether has a 18 decimals, so the price is for each Ether. But for a token has 10 decimals, the price is for 10**8 tokens."
+  }
+}

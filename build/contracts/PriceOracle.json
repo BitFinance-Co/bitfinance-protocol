@@ -1,0 +1,1054 @@
+{
+  "contractName": "PriceOracle",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "tokenPrices",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "isOwner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "asset",
+          "type": "address"
+        },
+        {
+          "name": "price",
+          "type": "uint256"
+        }
+      ],
+      "name": "setPrice",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "asset",
+          "type": "address"
+        }
+      ],
+      "name": "getPrice",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.8+commit.23d335f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"name\":\"asset\",\"type\":\"address\"},{\"name\":\"price\",\"type\":\"uint256\"}],\"name\":\"setPrice\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"address\"}],\"name\":\"tokenPrices\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"asset\",\"type\":\"address\"}],\"name\":\"getPrice\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"isOwner\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"}],\"devdoc\":{\"methods\":{\"isOwner()\":{\"return\":\"true if `msg.sender` is the owner of the contract. \"},\"owner()\":{\"return\":\"the address of the owner. \"},\"renounceOwnership()\":{\"details\":\"Allows the current owner to relinquish control of the contract.\"},\"transferOwnership(address)\":{\"details\":\"Allows the current owner to transfer control of the contract to a newOwner.\",\"params\":{\"newOwner\":\"The address to transfer ownership to.\"}}}},\"userdoc\":{\"methods\":{\"renounceOwnership()\":{\"notice\":\"Renouncing to ownership will leave the contract without an owner. It will not be possible to call the functions with the `onlyOwner` modifier anymore.\"}},\"notice\":\"A simple static oracle for test purpose.\"}},\"settings\":{\"compilationTarget\":{\"/Users/mikovainio/WebstormProjects/bitfinance-protocol/contracts/helper/PriceOracle.sol\":\"PriceOracle\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/mikovainio/WebstormProjects/bitfinance-protocol/contracts/helper/PriceOracle.sol\":{\"keccak256\":\"0x54086d35833a5103fcd54b3f7a5f07e47480523c239551b80f4ae9c2efb19038\",\"urls\":[\"bzzr://24f7734a6896d0c21fc361dcb76004893b1d49783f271fb5793e5b4baad24127\"]},\"/Users/mikovainio/WebstormProjects/bitfinance-protocol/contracts/lib/Ownable.sol\":{\"keccak256\":\"0x15bfab9e04580cb0cfd030e1ce2993f9ba8b2e62e5ebd49bc40029b3a9953487\",\"urls\":[\"bzzr://f51632b881984cb631d2d45fe71ab75a306848f0bef0b44bd246f1277e2fedca\"]}},\"version\":1}",
+  "bytecode": "0x60806040819052600080546001600160a01b03191633178082556001600160a01b0316917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0908290a3610496806100576000396000f3fe608060405234801561001057600080fd5b506004361061007c5760003560e01c8063715018a61161005b578063715018a6146100d25780638da5cb5b146100da5780638f32d59b146100ef578063f2fde38b146101045761007c565b8062e4768b14610081578063204120bc1461009657806341976e09146100bf575b600080fd5b61009461008f36600461030e565b610117565b005b6100a96100a43660046102e8565b610163565b6040516100b69190610406565b60405180910390f35b6100a96100cd3660046102e8565b610175565b610094610190565b6100e2610201565b6040516100b691906103ca565b6100f7610210565b6040516100b691906103d8565b6100946101123660046102e8565b610221565b61011f610210565b61014757604051600160e51b62461bcd02815260040161013e906103f6565b60405180910390fd5b6001600160a01b03909116600090815260016020526040902055565b60016020526000908152604090205481565b6001600160a01b031660009081526001602052604090205490565b610198610210565b6101b757604051600160e51b62461bcd02815260040161013e906103f6565b600080546040516001600160a01b03909116907f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0908390a3600080546001600160a01b0319169055565b6000546001600160a01b031690565b6000546001600160a01b0316331490565b610229610210565b61024857604051600160e51b62461bcd02815260040161013e906103f6565b6001600160a01b03811661027157604051600160e51b62461bcd02815260040161013e906103e6565b600080546040516001600160a01b03808516939216917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e091a3600080546001600160a01b0319166001600160a01b0392909216919091179055565b80356102d78161043c565b92915050565b80356102d781610453565b6000602082840312156102fa57600080fd5b600061030684846102cc565b949350505050565b6000806040838503121561032157600080fd5b600061032d85856102cc565b925050602061033e858286016102dd565b9150509250929050565b6103518161041d565b82525050565b61035181610428565b600061036d600d83610414565b7f494e56414c49445f4f574e455200000000000000000000000000000000000000815260200192915050565b60006103a6600983610414565b600160b91b682727aa2fa7aba722a902815260200192915050565b61035181610439565b602081016102d78284610348565b602081016102d78284610357565b602080825281016102d781610360565b602080825281016102d781610399565b602081016102d782846103c1565b90815260200190565b60006102d78261042d565b151590565b6001600160a01b031690565b90565b6104458161041d565b811461045057600080fd5b50565b6104458161043956fea265627a7a7230582078a31f449b6b9d53b7db7d7eb3f80a6e2f68991aa46717b00c0b9dc2175ede6a6c6578706572696d656e74616cf50037",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061007c5760003560e01c8063715018a61161005b578063715018a6146100d25780638da5cb5b146100da5780638f32d59b146100ef578063f2fde38b146101045761007c565b8062e4768b14610081578063204120bc1461009657806341976e09146100bf575b600080fd5b61009461008f36600461030e565b610117565b005b6100a96100a43660046102e8565b610163565b6040516100b69190610406565b60405180910390f35b6100a96100cd3660046102e8565b610175565b610094610190565b6100e2610201565b6040516100b691906103ca565b6100f7610210565b6040516100b691906103d8565b6100946101123660046102e8565b610221565b61011f610210565b61014757604051600160e51b62461bcd02815260040161013e906103f6565b60405180910390fd5b6001600160a01b03909116600090815260016020526040902055565b60016020526000908152604090205481565b6001600160a01b031660009081526001602052604090205490565b610198610210565b6101b757604051600160e51b62461bcd02815260040161013e906103f6565b600080546040516001600160a01b03909116907f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0908390a3600080546001600160a01b0319169055565b6000546001600160a01b031690565b6000546001600160a01b0316331490565b610229610210565b61024857604051600160e51b62461bcd02815260040161013e906103f6565b6001600160a01b03811661027157604051600160e51b62461bcd02815260040161013e906103e6565b600080546040516001600160a01b03808516939216917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e091a3600080546001600160a01b0319166001600160a01b0392909216919091179055565b80356102d78161043c565b92915050565b80356102d781610453565b6000602082840312156102fa57600080fd5b600061030684846102cc565b949350505050565b6000806040838503121561032157600080fd5b600061032d85856102cc565b925050602061033e858286016102dd565b9150509250929050565b6103518161041d565b82525050565b61035181610428565b600061036d600d83610414565b7f494e56414c49445f4f574e455200000000000000000000000000000000000000815260200192915050565b60006103a6600983610414565b600160b91b682727aa2fa7aba722a902815260200192915050565b61035181610439565b602081016102d78284610348565b602081016102d78284610357565b602080825281016102d781610360565b602080825281016102d781610399565b602081016102d782846103c1565b90815260200190565b60006102d78261042d565b151590565b6001600160a01b031690565b90565b6104458161041d565b811461045057600080fd5b50565b6104458161043956fea265627a7a7230582078a31f449b6b9d53b7db7d7eb3f80a6e2f68991aa46717b00c0b9dc2175ede6a6c6578706572696d656e74616cf50037",
+  "sourceMap": "754:443:18:-;;;;;999:6:34;:19;;-1:-1:-1;;;;;;999:19:34;1008:10;999:19;;;;-1:-1:-1;;;;;1066:6:34;;1033:40;;999:6;;1033:40;754:443:18;;;;;;",
+  "deployedSourceMap": "754:443:18:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;754:443:18;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;908:132;;;;;;;;;:::i;:::-;;827:46;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;1046:149;;;;;;;;;:::i;1855:157:34:-;;;:::i;1131:104::-;;;:::i;:::-;;;;;;;;1467:117;;;:::i;:::-;;;;;;;;2176:241;;;;;;;;;:::i;908:132:18:-;1350:9:34;:7;:9::i;:::-;1342:31;;;;-1:-1:-1;;;;;1342:31:34;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;1007:18:18;;;;;;;:11;:18;;;;;:26;908:132::o;827:46::-;;;;;;;;;;;;;:::o;1046:149::-;-1:-1:-1;;;;;1170:18:18;1140:7;1170:18;;;:11;:18;;;;;;;1046:149::o;1855:157:34:-;1350:9;:7;:9::i;:::-;1342:31;;;;-1:-1:-1;;;;;1342:31:34;;;;;;;;;1973:1;1957:6;;1936:40;;-1:-1:-1;;;;;1957:6:34;;;;1936:40;;1973:1;;1936:40;2003:1;1986:19;;-1:-1:-1;;;;;;1986:19:34;;;1855:157::o;1131:104::-;1192:7;1222:6;-1:-1:-1;;;;;1222:6:34;1131:104;:::o;1467:117::-;1530:4;1571:6;-1:-1:-1;;;;;1571:6:34;1557:10;:20;;1467:117::o;2176:241::-;1350:9;:7;:9::i;:::-;1342:31;;;;-1:-1:-1;;;;;1342:31:34;;;;;;;;;-1:-1:-1;;;;;2290:22:34;;2282:48;;;;-1:-1:-1;;;;;2282:48:34;;;;;;;;;2366:6;;;2345:38;;-1:-1:-1;;;;;2345:38:34;;;;2366:6;;;2345:38;;;2393:6;:17;;-1:-1:-1;;;;;;2393:17:34;-1:-1:-1;;;;;2393:17:34;;;;;;;;;;2176:241::o;5:130:-1:-;72:20;;97:33;72:20;97:33;;;57:78;;;;;142:130;209:20;;234:33;209:20;234:33;;279:241;;383:2;371:9;362:7;358:23;354:32;351:2;;;399:1;396;389:12;351:2;434:1;451:53;496:7;476:9;451:53;;;441:63;345:175;-1:-1;;;;345:175;527:366;;;648:2;636:9;627:7;623:23;619:32;616:2;;;664:1;661;654:12;616:2;699:1;716:53;761:7;741:9;716:53;;;706:63;;678:97;806:2;824:53;869:7;860:6;849:9;845:22;824:53;;;814:63;;785:98;610:283;;;;;;900:113;983:24;1001:5;983:24;;;978:3;971:37;965:48;;;1020:104;1097:21;1112:5;1097:21;;1132:364;;1292:67;1356:2;1351:3;1292:67;;;1392:66;1372:87;;1487:2;1478:12;;1278:218;-1:-1;;1278:218;1505:363;;1665:66;1729:1;1724:3;1665:66;;;-1:-1;;;;;1744:87;;1859:2;1850:12;;1651:217;-1:-1;;1651:217;1876:113;1959:24;1977:5;1959:24;;1996:213;2114:2;2099:18;;2128:71;2103:9;2172:6;2128:71;;2216:201;2328:2;2313:18;;2342:65;2317:9;2380:6;2342:65;;2424:407;2615:2;2629:47;;;2600:18;;2690:131;2600:18;2690:131;;2838:407;3029:2;3043:47;;;3014:18;;3104:131;3014:18;3104:131;;3252:213;3370:2;3355:18;;3384:71;3359:9;3428:6;3384:71;;3473:163;3576:19;;;3625:4;3616:14;;3569:67;3644:91;;3706:24;3724:5;3706:24;;3742:85;3808:13;3801:21;;3784:43;3834:121;-1:-1;;;;;3896:54;;3879:76;3962:72;4024:5;4007:27;4041:117;4110:24;4128:5;4110:24;;;4103:5;4100:35;4090:2;;4149:1;4146;4139:12;4090:2;4084:74;;4165:117;4234:24;4252:5;4234:24;",
+  "source": "/*\n\n    Copyright 2019 The BitFinance Protocol\n\n    Licensed under the Apache License, Version 2.0 (the \"License\");\n    you may not use this file except in compliance with the License.\n    You may obtain a copy of the License at\n\n        http://www.apache.org/licenses/LICENSE-2.0\n\n    Unless required by applicable law or agreed to in writing, software\n    distributed under the License is distributed on an \"AS IS\" BASIS,\n    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n    See the License for the specific language governing permissions and\n    limitations under the License.\n\n*/\n\npragma solidity ^0.5.8;\npragma experimental ABIEncoderV2;\n\nimport \"../lib/Ownable.sol\";\n\n/**\n * A simple static oracle for test purpose.\n */\ncontract PriceOracle is Ownable {\n\n    // token price to ether price\n    mapping(address => uint256) public tokenPrices;\n\n    // price decimals is 18\n    function setPrice(\n        address asset,\n        uint256 price\n    ) external onlyOwner {\n        tokenPrices[asset] = price;\n    }\n\n    function getPrice(\n        address asset\n    )\n        external\n        view\n        returns (uint256)\n    {\n        return tokenPrices[asset];\n    }\n}",
+  "sourcePath": "/Users/mikovainio/WebstormProjects/bitfinance-protocol/contracts/helper/PriceOracle.sol",
+  "ast": {
+    "absolutePath": "/Users/mikovainio/WebstormProjects/bitfinance-protocol/contracts/helper/PriceOracle.sol",
+    "exportedSymbols": {
+      "PriceOracle": [
+        6475
+      ]
+    },
+    "id": 6476,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 6438,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".8"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "613:23:18"
+      },
+      {
+        "id": 6439,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "637:33:18"
+      },
+      {
+        "absolutePath": "/Users/mikovainio/WebstormProjects/bitfinance-protocol/contracts/lib/Ownable.sol",
+        "file": "../lib/Ownable.sol",
+        "id": 6440,
+        "nodeType": "ImportDirective",
+        "scope": 6476,
+        "sourceUnit": 8094,
+        "src": "672:28:18",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 6441,
+              "name": "Ownable",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 8093,
+              "src": "778:7:18",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Ownable_$8093",
+                "typeString": "contract Ownable"
+              }
+            },
+            "id": 6442,
+            "nodeType": "InheritanceSpecifier",
+            "src": "778:7:18"
+          }
+        ],
+        "contractDependencies": [
+          8093
+        ],
+        "contractKind": "contract",
+        "documentation": "A simple static oracle for test purpose.",
+        "fullyImplemented": true,
+        "id": 6475,
+        "linearizedBaseContracts": [
+          6475,
+          8093
+        ],
+        "name": "PriceOracle",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 6446,
+            "name": "tokenPrices",
+            "nodeType": "VariableDeclaration",
+            "scope": 6475,
+            "src": "827:46:18",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+              "typeString": "mapping(address => uint256)"
+            },
+            "typeName": {
+              "id": 6445,
+              "keyType": {
+                "id": 6443,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "835:7:18",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "827:27:18",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+                "typeString": "mapping(address => uint256)"
+              },
+              "valueType": {
+                "id": 6444,
+                "name": "uint256",
+                "nodeType": "ElementaryTypeName",
+                "src": "846:7:18",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 6461,
+              "nodeType": "Block",
+              "src": "997:43:18",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 6459,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 6455,
+                        "name": "tokenPrices",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6446,
+                        "src": "1007:11:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+                          "typeString": "mapping(address => uint256)"
+                        }
+                      },
+                      "id": 6457,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 6456,
+                        "name": "asset",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6448,
+                        "src": "1019:5:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "1007:18:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 6458,
+                      "name": "price",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6450,
+                      "src": "1028:5:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1007:26:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 6460,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1007:26:18"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 6462,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 6453,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 6452,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 8036,
+                  "src": "987:9:18",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "987:9:18"
+              }
+            ],
+            "name": "setPrice",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6451,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6448,
+                  "name": "asset",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6462,
+                  "src": "935:13:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6447,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "935:7:18",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6450,
+                  "name": "price",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6462,
+                  "src": "958:13:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6449,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "958:7:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "925:52:18"
+            },
+            "returnParameters": {
+              "id": 6454,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "997:0:18"
+            },
+            "scope": 6475,
+            "src": "908:132:18",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 6473,
+              "nodeType": "Block",
+              "src": "1153:42:18",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 6469,
+                      "name": "tokenPrices",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6446,
+                      "src": "1170:11:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+                        "typeString": "mapping(address => uint256)"
+                      }
+                    },
+                    "id": 6471,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 6470,
+                      "name": "asset",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6464,
+                      "src": "1182:5:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "1170:18:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 6468,
+                  "id": 6472,
+                  "nodeType": "Return",
+                  "src": "1163:25:18"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 6474,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getPrice",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6465,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6464,
+                  "name": "asset",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6474,
+                  "src": "1073:13:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6463,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1073:7:18",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1063:29:18"
+            },
+            "returnParameters": {
+              "id": 6468,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6467,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6474,
+                  "src": "1140:7:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6466,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1140:7:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1139:9:18"
+            },
+            "scope": 6475,
+            "src": "1046:149:18",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 6476,
+        "src": "754:443:18"
+      }
+    ],
+    "src": "613:584:18"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/mikovainio/WebstormProjects/bitfinance-protocol/contracts/helper/PriceOracle.sol",
+    "exportedSymbols": {
+      "PriceOracle": [
+        6475
+      ]
+    },
+    "id": 6476,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 6438,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".8"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "613:23:18"
+      },
+      {
+        "id": 6439,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "637:33:18"
+      },
+      {
+        "absolutePath": "/Users/mikovainio/WebstormProjects/bitfinance-protocol/contracts/lib/Ownable.sol",
+        "file": "../lib/Ownable.sol",
+        "id": 6440,
+        "nodeType": "ImportDirective",
+        "scope": 6476,
+        "sourceUnit": 8094,
+        "src": "672:28:18",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 6441,
+              "name": "Ownable",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 8093,
+              "src": "778:7:18",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Ownable_$8093",
+                "typeString": "contract Ownable"
+              }
+            },
+            "id": 6442,
+            "nodeType": "InheritanceSpecifier",
+            "src": "778:7:18"
+          }
+        ],
+        "contractDependencies": [
+          8093
+        ],
+        "contractKind": "contract",
+        "documentation": "A simple static oracle for test purpose.",
+        "fullyImplemented": true,
+        "id": 6475,
+        "linearizedBaseContracts": [
+          6475,
+          8093
+        ],
+        "name": "PriceOracle",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 6446,
+            "name": "tokenPrices",
+            "nodeType": "VariableDeclaration",
+            "scope": 6475,
+            "src": "827:46:18",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+              "typeString": "mapping(address => uint256)"
+            },
+            "typeName": {
+              "id": 6445,
+              "keyType": {
+                "id": 6443,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "835:7:18",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "827:27:18",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+                "typeString": "mapping(address => uint256)"
+              },
+              "valueType": {
+                "id": 6444,
+                "name": "uint256",
+                "nodeType": "ElementaryTypeName",
+                "src": "846:7:18",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 6461,
+              "nodeType": "Block",
+              "src": "997:43:18",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 6459,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 6455,
+                        "name": "tokenPrices",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6446,
+                        "src": "1007:11:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+                          "typeString": "mapping(address => uint256)"
+                        }
+                      },
+                      "id": 6457,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 6456,
+                        "name": "asset",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6448,
+                        "src": "1019:5:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "1007:18:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 6458,
+                      "name": "price",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6450,
+                      "src": "1028:5:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1007:26:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 6460,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1007:26:18"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 6462,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 6453,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 6452,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 8036,
+                  "src": "987:9:18",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "987:9:18"
+              }
+            ],
+            "name": "setPrice",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6451,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6448,
+                  "name": "asset",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6462,
+                  "src": "935:13:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6447,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "935:7:18",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6450,
+                  "name": "price",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6462,
+                  "src": "958:13:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6449,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "958:7:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "925:52:18"
+            },
+            "returnParameters": {
+              "id": 6454,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "997:0:18"
+            },
+            "scope": 6475,
+            "src": "908:132:18",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 6473,
+              "nodeType": "Block",
+              "src": "1153:42:18",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 6469,
+                      "name": "tokenPrices",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6446,
+                      "src": "1170:11:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+                        "typeString": "mapping(address => uint256)"
+                      }
+                    },
+                    "id": 6471,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 6470,
+                      "name": "asset",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6464,
+                      "src": "1182:5:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "1170:18:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 6468,
+                  "id": 6472,
+                  "nodeType": "Return",
+                  "src": "1163:25:18"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 6474,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getPrice",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6465,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6464,
+                  "name": "asset",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6474,
+                  "src": "1073:13:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6463,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1073:7:18",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1063:29:18"
+            },
+            "returnParameters": {
+              "id": 6468,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6467,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6474,
+                  "src": "1140:7:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6466,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1140:7:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1139:9:18"
+            },
+            "scope": 6475,
+            "src": "1046:149:18",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 6476,
+        "src": "754:443:18"
+      }
+    ],
+    "src": "613:584:18"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.8+commit.23d335f2.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.11",
+  "updatedAt": "2020-03-02T16:59:53.297Z",
+  "devdoc": {
+    "methods": {
+      "isOwner()": {
+        "return": "true if `msg.sender` is the owner of the contract. "
+      },
+      "owner()": {
+        "return": "the address of the owner. "
+      },
+      "renounceOwnership()": {
+        "details": "Allows the current owner to relinquish control of the contract."
+      },
+      "transferOwnership(address)": {
+        "details": "Allows the current owner to transfer control of the contract to a newOwner.",
+        "params": {
+          "newOwner": "The address to transfer ownership to."
+        }
+      }
+    }
+  },
+  "userdoc": {
+    "methods": {
+      "renounceOwnership()": {
+        "notice": "Renouncing to ownership will leave the contract without an owner. It will not be possible to call the functions with the `onlyOwner` modifier anymore."
+      }
+    },
+    "notice": "A simple static oracle for test purpose."
+  }
+}
